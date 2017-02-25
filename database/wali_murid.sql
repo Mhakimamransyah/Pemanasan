@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Feb 2017 pada 02.43
+-- Generation Time: 25 Feb 2017 pada 02.58
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -34,6 +34,14 @@ CREATE TABLE `wali_murid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data untuk tabel `wali_murid`
+--
+
+INSERT INTO `wali_murid` (`id_wali_murid`, `nama_wali`, `alamat`, `telepon`) VALUES
+(1, 'Haris Budi Prasetyo', 'Jln.Karaya Agung', '08127564746'),
+(2, 'Ahmad Royhan Jomblo', 'Jln.Sukabangun 2', '0812121211212');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -51,7 +59,7 @@ ALTER TABLE `wali_murid`
 -- AUTO_INCREMENT for table `wali_murid`
 --
 ALTER TABLE `wali_murid`
-  MODIFY `id_wali_murid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_wali_murid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

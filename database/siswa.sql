@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Feb 2017 pada 02.42
+-- Generation Time: 25 Feb 2017 pada 02.57
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -35,6 +35,14 @@ CREATE TABLE `siswa` (
   `ID_wali_murid` int(11) NOT NULL,
   `Asal SMP` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `siswa`
+--
+
+INSERT INTO `siswa` (`NISN`, `Nama`, `Alamat`, `Jurusan`, `ID_wali_kelas`, `ID_wali_murid`, `Asal SMP`) VALUES
+('09012345687765', 'Samir Ali', 'Jln.Sukabangun 2', 'IPA', 1, 2, 'SMP N 4 Palembang'),
+('0902128141911', 'Andi Soraya', 'Jln.Karaya Agung', 'IPA', 1, 1, 'SMP N 4 Palembang');
 
 --
 -- Indexes for dumped tables

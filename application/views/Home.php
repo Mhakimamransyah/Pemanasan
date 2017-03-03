@@ -60,7 +60,7 @@
         <p></p>
     </div>
     <div class="col-sm-4">
-       <a href="http://localhost/Pemanasan/index.php/Admin/"><img src="images/admin.jpg" alt="Admin" style="width: 194px;
+       <a href="http://localhost/Pemanasan/index.php/Admin/login"><img src="images/admin.jpg" alt="Admin" style="width: 194px;
     height: 153px;">
       <h3>Administrator</h3></a>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>Siswa | Registrasi</title>
-  <link rel="stylesheet" href="../../css/bootstrap.min.css">
-  <script src="../../js/jquery.min.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/css/bootstrap.min.css">
+  <script src="<?php echo base_url(); ?>/js/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: cornsilk;">
  
@@ -85,12 +85,13 @@
       </div>
      <br><br><br><br>
   </form>
-  <div class="col-sm-offset-2 col-sm-9" >
+   <div class="col-sm-offset-2 col-sm-9" >
        	 <p>By clicking the register button, you agree for the term and privacy policy provided by us</p>
      </div>
     </div>
 </div>
-   </div>   
+   </div>
+
 </body>
 </html>
 

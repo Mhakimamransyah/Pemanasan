@@ -7,7 +7,7 @@
 body, html{
      height: 100%;
  	background-repeat: no-repeat;
- 	background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+ 	background:url(<?php echo base_url(); ?>/images/background.jpg);
  	font-family: 'Oxygen', sans-serif;
 	    background-size: cover;
 }
@@ -115,9 +115,9 @@ span.input-group-addon i {
   <title>Siswa | Masuk</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../css/bootstrap.min.css">
-  <script src="../../js/jquery.min.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/css/bootstrap.min.css">
+  <script src="<?php echo base_url(); ?>/js/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -125,15 +125,14 @@ span.input-group-addon i {
 			<div class="row main">
 				<div class="main-login main-center" style="background-color: brown">
 				<h1><center>Login Siswa</center></h1>
-					<form class="" method="post" action="#">						
-						
 
+					<form class="" method="post" >						
 						<div class="form-group">
 							<label for="email" class="cols-sm-2 control-label">NISN</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your NISN" autocomplete="off" value=" " />
+									<input type="text" class="form-control" name="nisn" id="nisn"  placeholder="Enter your NISN" autocomplete="off"/>
 								</div>
 							</div>
 						</div>
@@ -161,7 +160,7 @@ span.input-group-addon i {
 		</div>
 
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>/js/bootstrap.min.js"></script>
 	</body>

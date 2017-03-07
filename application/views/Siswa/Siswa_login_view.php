@@ -153,6 +153,7 @@ span.input-group-addon i {
 						<div class="form-group ">
 							<input type="submit" name="submit" class="btn btn-primary btn-lg btn-block login-button" value="Login">
 						    <input type="submit" name="create" class="btn btn-warning btn-lg btn-block login-button" value="Registrasi Akun Siswa">
+						    <input type="submit" name="home" class="btn btn-info btn-lg btn-block login-button" value="Home">
 						</div>
 					</form>
 				</div>

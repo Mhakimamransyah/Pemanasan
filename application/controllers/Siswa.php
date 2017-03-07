@@ -22,10 +22,15 @@
        else if(isset($_POST['create'])){
            $this->register();
        }
+       else if(isset($_POST['home'])){
+           redirect();
+       }
        else{
           $this->load->view("Siswa/Siswa_login_view");
        }
     }
+
+
 
     function register(){
        $this->load->view("Siswa/Siswa_registration_view");

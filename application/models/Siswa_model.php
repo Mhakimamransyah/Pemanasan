@@ -25,6 +25,10 @@
     	$this->nisn= $newNisn;
     }
 
+    public function getNisn(){
+        return $this->nisn;
+    }
+
     public function setAlamat($newAlamat){
     	$this->alamat= $newAlamat;
     }
@@ -51,7 +55,7 @@
 
     public function login($nisn,$password){
        $query = "SELECT * FROM siswa WHERE NISN='".$nisn."' AND Password='".$password."'";
-       return $this->db->query($query);       
+       return  $this->db->query($query);;      
     }
 
 

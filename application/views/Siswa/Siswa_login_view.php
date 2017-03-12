@@ -116,6 +116,8 @@ span.input-group-addon i {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo base_url(); ?>/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/css/toastr.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/css/toastr.css">
   <script src="<?php echo base_url(); ?>/js/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>/js/bootstrap.min.js"></script>
 </head>
@@ -126,7 +128,7 @@ span.input-group-addon i {
 				<div class="main-login main-center" style="background-color: brown">
 				<h1><center>Login Siswa</center></h1>
 
-					<form class="" method="post" >						
+					<form id="loginSiswa" class="" method="post" >						
 						<div class="form-group">
 							<label for="email" class="cols-sm-2 control-label">NISN</label>
 							<div class="cols-sm-10">
@@ -152,8 +154,8 @@ span.input-group-addon i {
 
 						<div class="form-group ">
 							<input type="submit" name="submit" class="btn btn-primary btn-lg btn-block login-button" value="Login">
-						    <input type="submit" name="create" class="btn btn-warning btn-lg btn-block login-button" value="Registrasi Akun Siswa">
-						    <input type="submit" name="home" class="btn btn-info btn-lg btn-block login-button" value="Home">
+						    <button type="button" id="registration" class="btn btn-warning btn-lg btn-block login-button">Registrasi Akun Siswa</button>
+						    <button type="button" id="home" class="btn btn-info btn-lg btn-block login-button">Home</button>
 						</div>
 					</form>
 				</div>
@@ -162,6 +164,46 @@ span.input-group-addon i {
 
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="<?php echo base_url(); ?>/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/js/toastr.js"></script>
+    <script src="<?php echo base_url(); ?>/js/toastr.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url(); ?>/js/bootstrap.min.js"></script>
 	</body>
+
+
+<script type="text/javascript">
+
+  toastr.options.preventDuplicates = true;
+  toastr.options.timeOut = 500;
+  
+  $("#loginSiswa").on('submit',function(e){
+  e.preventDefault();
+  
+   $.ajax({
+       type : "post",
+       url  : "<?php echo site_url();?>/Siswa/loginProcess",
+       data  : $('#loginSiswa').serialize(),
+       beforeSubmit : function(data){
+           
+       },
+       success : function(data){
+         if(data == 0){
+              window.location.href = "<?php echo site_url();?>/Siswa/index";
+         }
+         else{
+             toastr.error("Username or Password","ERROR");
+         }
+        },
+        error : function(data){
+        }
+   })
+})
+
+ $("#registration").click(function(){
+ 	window.location.href = "<?php echo site_url();?>/Siswa/register";
+ })
+ $("#home").click(function(){
+ 	 window.location.href = "http://localhost/Pemanasan";
+ })
+</script>
+

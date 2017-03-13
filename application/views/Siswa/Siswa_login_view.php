@@ -123,6 +123,9 @@ span.input-group-addon i {
 </head>
 
 <body>
+   <?php 
+       $timeout =  $this->session->flashdata('message');  
+    ?>
 		<div class="container">
 			<div class="row main">
 				<div class="main-login main-center" style="background-color: brown">
@@ -175,7 +178,16 @@ span.input-group-addon i {
 
   toastr.options.preventDuplicates = true;
   toastr.options.timeOut = 500;
-  
+   
+
+  var temp = "x";
+  var Rto = temp.concat("<?php echo $timeout; ?>");
+  if(Rto != 'x'){
+    toastr.options.timeOut = 3000;
+    toastr.warning("<?php echo $timeout; ?>","SORRY");
+  }
+
+
   $("#loginSiswa").on('submit',function(e){
   e.preventDefault();
   

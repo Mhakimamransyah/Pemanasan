@@ -4,6 +4,8 @@
 <title>Siswa | Dashboard</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="<?php echo base_url();?>/js/jquery.min.js"></script>
+<script src="<?php echo base_url();?>/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url();?>/resource/siswa/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<?php echo base_url();?>/resource/siswa/css/bootstrap-responsive.min.css" />
 <link rel="stylesheet" href="<?php echo base_url();?>/resource/siswa/css/fullcalendar.css" />
@@ -25,14 +27,7 @@
 
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">M. Hakim Amransyah</span><?php echo $this->session->tempdata("nisn"); ?>
-<b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><a href="<?php echo site_url(); ?>/Siswa/index/profile"><i class="icon-user"></i> My Profile</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
-        <li class="divider"></li>
-      </ul>
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text"><?php echo $model->getNama()." ";?></span><!-- <?php echo $this->session->tempdata("nisn"); ?> --></a>
     </li>
     <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
     <li class=""><a title="" href="<?php echo site_url();?>/Siswa/logoutProcess"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
@@ -51,18 +46,18 @@
      <li><img src="<?php echo base_url();?>/resource/siswa/img/user.jpg" style="width: 202px;
     padding: 8px;
     height: 215px; margin-top: -80px"></li>
-     <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Beranda</span></a> </li>
-     <li><a href="#"><i class="icon icon-book"></i> <span>Pelajaran</span><span class="label label-important">3</span></a> </li>
-     <li class="submenu"> <a href="#"><i class="icon icon-group"></i> <span>Kelas</span></a>
+     <li id="Beranda" class="active"><a href="<?php echo site_url(); ?>/Siswa/index/"><i class="icon icon-home"></i> <span>Beranda</span></a> </li>
+     <li id="Pelajaran"><a href=""><i class="icon icon-book"></i> <span>Pelajaran</span><span class="label label-important">3</span></a> </li>
+     <li id="Kelas" class="submenu"> <a href="#"><i class="icon icon-group"></i> <span>Kelas</span></a>
       <ul>
-        <li><a href="">X (sepuluh)</a></li>
-        <li><a href="">XI (sebelas)</a></li>
-        <li><a href="">XII (duabelas)</a></li>
+        <li id="KelasX"><a href="">X (sepuluh)</a></li>
+        <li id="KelasXI"><a href="">XI (sebelas)</a></li>
+        <li id="KelasXII"><a href="">XII (duabelas)</a></li>
       </ul>
-     <li><a href="#"><i class="icon icon-user"></i> <span>Profile</span></a> </li>
-     <li><a href="#"><i class="icon icon-leaf"></i> <span>Guru</span></a> </li>
-     <li><a href="#"><i class="icon  icon-envelope-alt"></i> <span>Pesan</span><span class="label label-important">3</span></a> </li>
-     <li><a href="#"><i class="icon icon-comment"></i> <span>Tanya Admin</span></a> </li>
+     <li><a href="<?php echo site_url(); ?>/Siswa/index/profile"><i class="icon icon-user"></i> <span>Profile</span></a> </li>
+     <li id="Guru"><a href="#"><i class="icon icon-leaf"></i> <span>Guru</span></a> </li>
+     <li id="Pesan"><a href="#"><i class="icon  icon-envelope-alt"></i> <span>Pesan</span><span class="label label-important">3</span></a> </li>
+     <li id="TanyaAdmin"><a href="#"><i class="icon icon-comment"></i> <span>Tanya Admin</span></a> </li>
 </div>
 <!--sidebar-menu-->
 
@@ -70,18 +65,18 @@
 <div id="content">
 <!--breadcrumbs-->
   <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+    <div id="breadcrumb"> </div>
   </div>
 <!--End-breadcrumbs-->
 
 <!--Action boxes-->
-  <div class="container-fluid">
+  <div class="container-fluid" id="mainAction">
    
     <div class="quick-actions_homepage">
       <ul class="quick-actions">
-        <li class="bg_lb"> <a href="index.html"> <i class="icon-home"></i> Beranda</a></li>
+        <li class="bg_lb"> <a href="<?php echo site_url(); ?>/Siswa/index/"> <i class="icon-home"></i> Beranda</a></li>
         <li class="bg_ly span3"> <a href="#"> <i class="icon-book"></i><span class="label label-success">101</span>Pelajaran</a></li>
-        <li class="bg_lo span2"> <a href="#"> <i class="icon-user"></i>Profile</a></li>
+        <li class="bg_lo span2" > <a href="<?php echo site_url(); ?>/Siswa/index/profile"> <i class="icon-user"></i>Profile</a></li>
         <li class="bg_ls span3"> <a href="#"> <i class="icon-group"></i>Kelas</a></li>
         <li class="bg_ls span2"> <a href="#"> <i class="icon-leaf"></i>Guru</a></li>
         <li class="bg_lb span2"> <a href="#"> <i class="icon-envelope-alt"></i><span class="label label-important">20</span>Pesan</a></li>
@@ -158,7 +153,6 @@
 </div>
 
 <!--end-Footer-part-->
-
 <script src="<?php echo base_url();?>/resource/siswa/js/excanvas.min.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/jquery.min.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/jquery.ui.custom.js"></script> 
@@ -180,30 +174,8 @@
 <script src="<?php echo base_url();?>/resource/siswa/js/matrix.popover.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/jquery.dataTables.min.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/matrix.tables.js"></script> 
-
-<script type="text/javascript">
-  // This function is called from the pop-up menus to transfer to
-  // a different page. Ignore if the value returned is a null string:
-  function goPage (newURL) {
-
-      // if url is empty, skip the menu dividers and reset the menu selection to default
-      if (newURL != "") {
-      
-          // if url is "-", it is this page -- reset the menu:
-          if (newURL == "-" ) {
-              resetMenu();            
-          } 
-          // else, send page to designated URL            
-          else {  
-            document.location.href = newURL;
-          }
-      }
-  }
-
-// resets the menu selection upon entry to this page:
-function resetMenu() {
-   document.gomenu.selector.selectedIndex = 2;
-}
-</script>
 </body>
 </html>
+
+
+

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Feb 2017 pada 02.57
+-- Generation Time: 14 Mar 2017 pada 05.06
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -29,20 +29,24 @@ SET time_zone = "+00:00";
 CREATE TABLE `siswa` (
   `NISN` varchar(50) NOT NULL,
   `Nama` varchar(30) NOT NULL,
+  `TTL` date NOT NULL,
   `Alamat` varchar(30) NOT NULL,
+  `Kontak` varchar(20) NOT NULL,
   `Jurusan` varchar(25) NOT NULL,
   `ID_wali_kelas` int(11) NOT NULL,
   `ID_wali_murid` int(11) NOT NULL,
-  `Asal SMP` varchar(30) NOT NULL
+  `Asal_SMP` varchar(30) NOT NULL,
+  `Foto` varchar(50) NOT NULL,
+  `Password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `siswa`
 --
 
-INSERT INTO `siswa` (`NISN`, `Nama`, `Alamat`, `Jurusan`, `ID_wali_kelas`, `ID_wali_murid`, `Asal SMP`) VALUES
-('09012345687765', 'Samir Ali', 'Jln.Sukabangun 2', 'IPA', 1, 2, 'SMP N 4 Palembang'),
-('0902128141911', 'Andi Soraya', 'Jln.Karaya Agung', 'IPA', 1, 1, 'SMP N 4 Palembang');
+INSERT INTO `siswa` (`NISN`, `Nama`, `TTL`, `Alamat`, `Kontak`, `Jurusan`, `ID_wali_kelas`, `ID_wali_murid`, `Asal_SMP`, `Foto`, `Password`) VALUES
+('1122334455', 'Andi Soraya', '1996-01-02', 'Jln.Karaya Agung', '081271286874', 'IPA', 1, 1, 'SMP N 4 Palembang', '', '54321'),
+('5544332211', 'Samir Ali', '1996-03-02', 'Jln.Sukabangun 2', '081266574645', 'IPA', 1, 2, 'SMP N 4 Palembang', '', '12345');
 
 --
 -- Indexes for dumped tables

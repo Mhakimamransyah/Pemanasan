@@ -52,7 +52,7 @@
      <li id="Pelajaran"><a href=""><i class="icon icon-book"></i> <span>Pelajaran</span><span class="label label-important">3</span></a> </li>
      <li id="Kelas" class="submenu"> <a href="#"><i class="icon icon-group"></i> <span>Kelas</span></a>
       <ul>
-        <li id="KelasX"><a href="">X (sepuluh)</a></li>
+        <li id="KelasX"><a href="<?php echo site_url();?>/Siswa/index/X">X (sepuluh)</a></li>
         <li id="KelasXI"><a href="">XI (sebelas)</a></li>
         <li id="KelasXII"><a href="">XII (duabelas)</a></li>
       </ul>

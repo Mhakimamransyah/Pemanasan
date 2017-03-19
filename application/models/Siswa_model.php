@@ -17,7 +17,6 @@
 
     public function __construct(){
     	parent::__construct();
-    	$this->load->database();
     }
 
     public function setNama($newNama){
@@ -116,9 +115,29 @@
         $this->setAsalSmp($row["Asal_SMP"]);
     }
 
+    //its should not in here
     public function login($nisn,$password){
        $query = "SELECT * FROM siswa WHERE NISN='".$nisn."' AND Password='".$password."'";
        return  $this->db->query($query);;      
+    }
+
+    public function getClass(){
+       $query = "SELECT * FROM relasi_siswa_kelas_x WHERE NISN='".$this->nisn."'"; 
+       $data = $this->db->query($query);
+       if($data->num_rows() > 0){
+
+          $result = $data->row_array(1);
+          $idkelas = $result["id_kelas_x"];
+
+          $query_2 = "SELECT a.Nama_kelas_X,a.Id_kelas_x,a.Wali_kelas,a.ruangan,b.NISN,c.Nama FROM kelas_x a,relasi_ketua_kelas_kelas_x b,siswa c WHERE a.Id_kelas_x = ".$idkelas." AND a.Id_kelas_x = b.Id_kelas_x AND b.NISN = c.NISN";
+
+          $dataKelas = $this->db->query($query_2);
+          $result = $dataKelas->row_array(1);
+          return $result;
+       }
+       else{
+          return "no";
+       }
     }
 
 

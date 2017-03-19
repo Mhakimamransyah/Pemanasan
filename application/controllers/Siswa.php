@@ -3,17 +3,19 @@
   class Siswa extends CI_Controller{
      
      var $model;
-     
+     var $kelas;
 
      public function __construct(){
         parent::__construct();
         $this->load->helper("url");
-        $this->load->database();
+        
         $this->load->library("session");
         $this->load->library("upload",$this->getUploadConfigurasi());
-
-        $this->load->model("Siswa_model");
+        
+        $this->load->model("Kelas_model");
+        $this->load->model("Siswa_model"); //Kelas 
         $this->model = new Siswa_model();
+        $this->kelas = new Kelas_model();
      }
 
      //exit and entry of the program flow//MAIN CONTROL OF PROGRAM
@@ -22,6 +24,15 @@
               $this->model->fillAllData($this->session->tempdata("nisn"));
               if($action == "profile"){
                   $this->load->view("Siswa/Siswa_profile",["model"=>$this->model]);
+              }
+              else if($action == "X"){
+                  $this->load->view("Siswa/Siswa_kelas_x_view",["model"=>$this->model]);
+              }
+              else if($action == "newClass"){
+                  $this->load->view("Siswa/Siswa_newClass_view",["model"=>$this->model]);
+              }
+              else if($action == "joinClass"){
+                  $this->load->view("Siswa/Siswa_joinClass_view",["model"=>$this->model]);
               }
               else{
                   $this->load->view("Siswa/Siswa_main",["model"=>$this->model]);    
@@ -73,6 +84,7 @@
        $this->load->view("Siswa/Siswa_registration_view");
     }
 
+    //processing register siswa
     function registerProcess(){
         if($_POST['password'] != $_POST['confirmpass']){
            
@@ -107,6 +119,39 @@
       }
         
     }
+    
+    //processing create new class
+    function newClassProcess(){
+       $this->kelas->setNamaKelas($_POST['namakelas']);
+       $this->kelas->setRuangan($_POST['ruangan']);
+       $this->kelas->setPasswordKelas($_POST['password']);
+       $this->kelas->setKetuaKelas($_POST['ketuakelas']);
+       $this->kelas->setNisnKetuaKelas($this->session->tempdata('nisn'));
+       $data = $this->kelas->insert();
+       if($data == 0){
+          $this->session->set_flashdata("berhasil","true"); //flashdata session untuk notifikasi berhasil
+          $this->index("X");
+       }
+       else{
+          $this->session->set_flashdata("berhasil","false");  //flashdata session untuk notifikasi gagal
+          $this->index("X");
+       }
+       
+    }
+
+    //processing join new class
+    function joinClassProcess(){
+       $result = $this->kelas->join($this->session->tempdata("nisn"),$_POST["idkelas"],$_POST["password"]);
+       if($result == "not found"){
+          $this->session->set_flashdata("statusjoin","false");
+          $this->index("joinClass");
+       }
+       else{
+          $this->session->set_flashdata("statusjoin","true");
+          $this->session->set_flashdata("berhasil","join");
+          $this->index("X");
+       }
+    }
 
     function getUploadConfigurasi(){
        $config  = ['upload_path' => "./resource/siswa/img/fotosiswa",
@@ -116,6 +161,4 @@
     }
 
   }
-
-
 ?>

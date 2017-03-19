@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Siswa | Profile</title>
+<title>Siswa | Buat Kelas Baru</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="<?php echo base_url();?>/js/jquery.min.js"></script>
@@ -48,13 +48,15 @@
     height: 215px; margin-top: -80px"></li>
      <li id="Beranda"><a href="<?php echo site_url(); ?>/Siswa/index/main"><i class="icon icon-home"></i> <span>Beranda</span></a> </li>
      <li id="Pelajaran"><a href=""><i class="icon icon-book"></i> <span>Pelajaran</span><span class="label label-important">3</span></a> </li>
-     <li id="Kelas" class="submenu"> <a href="#"><i class="icon icon-group"></i> <span>Kelas</span></a>
+
+     <li id="Kelas" class="submenu open" > <a href="#"><i class="icon icon-group"></i> <span>Kelas</span></a>
       <ul>
         <li id="KelasX"><a href="<?php echo site_url();?>/Siswa/index/X">X (sepuluh)</a></li>
         <li id="KelasXI"><a href="">XI (sebelas)</a></li>
         <li id="KelasXII"><a href="">XII (duabelas)</a></li>
       </ul>
-     <li class="active"><a href="<?php echo site_url(); ?>/Siswa/index/profile"><i class="icon icon-user"></i> <span>Profile</span></a> </li>
+
+     <li ><a href="<?php echo site_url(); ?>/Siswa/index/profile"><i class="icon icon-user"></i> <span>Profile</span></a> </li>
      <li id="Guru"><a href="#"><i class="icon icon-leaf"></i> <span>Guru</span></a> </li>
      <li id="Pesan"><a href="#"><i class="icon  icon-envelope-alt"></i> <span>Pesan</span><span class="label label-important">3</span></a> </li>
      <li id="TanyaAdmin"><a href="#"><i class="icon icon-comment"></i> <span>Tanya Admin</span></a> </li>
@@ -68,82 +70,69 @@
     <div id="breadcrumb"> </div>
   </div>
 <!--End-breadcrumbs-->
-
+  
 <!--Action boxes-->
-  <div class="container-fluid" id="mainAction">
-     <table style="font-size:25px;" cellpadding="10px">
-     <tr>
-     	<td colspan="3">
-     		<h1>PROFIL SISWA</h1>
-     	</td>
-     </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">NAMA
-     	 	</td>
-     	 	<td>:</td>
-     	 	<td>
-     	 		<?php echo $model->getNama();?>
-     	 	</td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">TTL
-     	 	</td>
-     	 	<td>:</td>
-     	 	<td>
-     	 		<?php echo $model->getTtl();?>
-     	 	</td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">NOMOR HP
-     	 	</td>
-     	 	<td>:</td>
-     	 	<td>
-     	 		<?php echo $model->getKontak();?>
-     	 	</td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">NISN</td>
-     	 	<td>:</td>
-     	 	<td><?php echo $model->getNisn();?></td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">ALAMAT</td>
-     	 	<td>:</td>
-     	 	<td><?php echo $model->getAlamat();?></td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">JURUSAN</td>
-     	 	<td>:</td>
-     	 	<td><?php echo $model->getJurusan();?></td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">WALI KELAS</td>
-     	 	<td>:</td>
-     	 	<td></td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">WALI MURID</td>
-     	 	<td>:</td>
-     	 	<td></td>
-     	 </tr>
-     	 <tr>
-     	 	<td style="font-weight: bold;">ASAL SMP</td>
-     	 	<td>:</td>
-     	 	<td><?php echo $model->getAsalSmp();?></td>
-     	 </tr>
-     </table>
+
+ <div class="container-fluid" style="padding-left:50px;"><hr>
+    
+    <div class="row-fluid">
+      <div class="span5">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-info-sign"></i> </span>
+            <h5>Buat Kelas Baru</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form class="form-horizontal" method="post" action="<?php echo site_url();?>/Siswa/newClassProcess" >
+              <div class="control-group">
+                <label class="control-label">Nama kelas</label>
+                <div class="controls">
+                  <input type="text" name="namakelas" autocomplete="off">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Ruangan</label>
+                <div class="controls">
+                  <input type="text" name="ruangan" autocomplete="off">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Password</label>
+                <div class="controls">
+                  <input type="password" name="password" autocomplete="off">
+                </div>
+              </div>
+               <div class="control-group">
+                <label class="control-label">Ketua kelas</label>
+                <div class="controls">
+                  <input type="text" name="ketuakelas"  data-toggle="tooltip" title="Pembuat kelas bertindak sebagai ketua kelas" value="<?php echo $model->getNama();?>" readonly autocomplete="off">
+                </div>
+              </div>
+              <div class="form-actions">
+                <input type="submit" value="Buat" class="btn btn-success">
+                <input type="Reset" value="Reset" class="btn btn-warning">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+   
 
 <!--end-main-container-part-->
 
 <!--Footer-part-->
 
-<div class="row-fluid">
-  <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
-</div>
+
 
 <!--end-Footer-part-->
+<
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 <script src="<?php echo base_url();?>/resource/siswa/js/excanvas.min.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/jquery.min.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/jquery.ui.custom.js"></script> 

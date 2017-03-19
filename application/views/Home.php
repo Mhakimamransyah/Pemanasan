@@ -45,11 +45,11 @@
     color: cornsilk;;">Sistem Informasi Akademik</h1>
   <h2 style="color: aliceblue;">SMA Negeri 69 Palembang</h2>
   <br><br>
-  <a href="http://localhost/Pemanasan/index.php/Siswa/"  class="test" data-toggle="tooltip" data-placement="top" title="siswa"><img src="   images/student.jpg" style=" height: 224px; width:224px; border-radius: 17px"></a>
+  <a href="<?php echo site_url(); ?>/Siswa/"  class="test" data-toggle="tooltip" data-placement="top" title="siswa"><img src="   images/student.jpg" style=" height: 224px; width:224px; border-radius: 17px"></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="http://localhost/Pemanasan/index.php/Guru/" class="test"  data-toggle="tooltip" data-placement="top" title="guru"><img src="images/teacher.jpg" style=" height: 224px; width:224px; border-radius: 17px"></a>
+  <a href="<?php echo site_url(); ?>/Guru/" class="test"  data-toggle="tooltip" data-placement="top" title="guru"><img src="images/teacher.jpg" style=" height: 224px; width:224px; border-radius: 17px"></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="http://localhost/Pemanasan/index.php/Wali/" class="test" data-toggle="tooltip" data-placement="top" title="wali"><img src="images/parents.jpg" style=" height: 224px; width:224px; border-radius: 17px"></a>
+  <a href="<?php echo site_url(); ?>/Wali/" class="test" data-toggle="tooltip" data-placement="top" title="wali"><img src="images/parents.jpg" style=" height: 224px; width:224px; border-radius: 17px"></a>
   &nbsp;&nbsp;&nbsp;
 
 </div>
@@ -60,7 +60,7 @@
         <p></p>
     </div>
     <div class="col-sm-4">
-       <a href="http://localhost/Pemanasan/index.php/Admin/"><img src="images/admin.jpg" alt="Admin" style="width: 194px;
+       <a href="http://localhost/Pemanasan/index.php/Admin/login"><img src="images/admin.jpg" alt="Admin" style="width: 194px;
     height: 153px;">
       <h3>Administrator</h3></a>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>

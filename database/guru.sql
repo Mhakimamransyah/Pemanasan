@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2017 at 05:13 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: 25 Feb 2017 pada 02.58
+-- Versi Server: 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guru`
+-- Struktur dari tabel `guru`
 --
 
 CREATE TABLE `guru` (
@@ -31,6 +31,14 @@ CREATE TABLE `guru` (
   `Nama` varchar(20) NOT NULL,
   `Alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `guru`
+--
+
+INSERT INTO `guru` (`NIP`, `Nama`, `Alamat`) VALUES
+(1, 'Agung Saptyabudi Pra', 'Jln. Musi Rawas Ilir'),
+(2, 'Joko Tampal Susono', 'Jln. Ki Hajar Puji Lesamana');
 
 --
 -- Indexes for dumped tables

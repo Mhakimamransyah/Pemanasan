@@ -10,6 +10,10 @@
      var $jurusan;
      var $id_wali_kelas;
      var $id_wali_murid;
+<<<<<<< HEAD
+=======
+     var $foto;
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
      var $pass;
      var $asalSMP;
 
@@ -87,6 +91,23 @@
         return $this->asalSMP;
     }
 
+<<<<<<< HEAD
+=======
+    public function setFoto($newFoto){
+        $this->foto = $newFoto;
+    }
+
+    public function getFoto(){
+        return $this->foto;
+    }
+
+    public function insert($data){
+        $query = "INSERT INTO siswa(NISN,Nama,TTL,Alamat,Kontak,Jurusan,Asal_SMP,Foto,Password) VALUES('".$data['nisn']."','".$data['nama']."','".$data['ttl']."','".$data['alamat']."','".$data['kontak']."','".$data['jurusan']."','".$data['asalSmp']."','".$data["foto"]."','".$data["password"]."')";
+        $data = $this->db->query($query);
+        return $data;
+    }
+
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
      public function fillAllData($nisn){
         $query = "SELECT * FROM siswa WHERE NISN='".$nisn."'";
         $data =  $this->db->query($query);
@@ -97,6 +118,10 @@
         $this->setKontak($row["Kontak"]);
         $this->setAlamat($row["Alamat"]);
         $this->setJurusan($row["Jurusan"]);
+<<<<<<< HEAD
+=======
+        $this->setFoto($row['Foto']);
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
         $this->setAsalSmp($row["Asal_SMP"]);
     }
 

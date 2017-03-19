@@ -6,6 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="<?php echo base_url();?>/js/jquery.min.js"></script>
 <script src="<?php echo base_url();?>/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
+=======
+<script src="<?php echo base_url(); ?>/js/toastr.js"></script>
+<script src="<?php echo base_url(); ?>/js/toastr.min.js"></script>
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
 <link rel="stylesheet" href="<?php echo base_url();?>/resource/siswa/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<?php echo base_url();?>/resource/siswa/css/bootstrap-responsive.min.css" />
 <link rel="stylesheet" href="<?php echo base_url();?>/resource/siswa/css/fullcalendar.css" />
@@ -16,7 +21,11 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<<<<<<< HEAD
 
+=======
+<?php $welcome = $this->session->flashdata("welcome"); ?>
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
 <!--Header-part-->
 <div id="header">
 </div>
@@ -43,7 +52,11 @@
 <!--sidebar-menu-->
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
+<<<<<<< HEAD
      <li><img src="<?php echo base_url();?>/resource/siswa/img/user.jpg" style="width: 202px;
+=======
+     <li><img src="<?php echo base_url();?>/resource/siswa/img/fotosiswa/<?php echo $model->getFoto();?>" style="width: 202px;
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
     padding: 8px;
     height: 215px; margin-top: -80px"></li>
      <li id="Beranda" class="active"><a href="<?php echo site_url(); ?>/Siswa/index/"><i class="icon icon-home"></i> <span>Beranda</span></a> </li>
@@ -151,8 +164,63 @@
 <div class="row-fluid">
   <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
 </div>
+<<<<<<< HEAD
 
 <!--end-Footer-part-->
+=======
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          <div id="myModalwe" class="modal hide">
+              <div class="modal-header">
+                <button data-dismiss="modal" class="close" type="button">×</button>
+                <h3 style="font-size:21px;">Selamat Datang di SIMAK SMA N 69 Palembang</h3>
+              </div>
+              <div class="modal-body">
+               <h7 style="font-weight: 900;">Aturan main sistem</h7>
+                <ul>
+                  <li>Sistem ini digunakan untuk seluruh siswa yang terdaftar di SMA N 69</li>
+                  <li>Sistem ini digunakan untuk membantu segala aktivitas belajar dan mengajar siswa di sekolah</li>
+                  <li>Sistem ini tidak diperuntukkan sebagai pengganti tatap muka guru dan siswa di kelas</li>
+                  <li>Data wali murid dan wali kelas belum diisi , silahkan kordinasi dengan guru atau ketua kelas</li>
+                  <li>Setiap siswa harus bertanggung jawab terhadap data yang diisikannnya</li>
+                  <li style="color:red">Setiap kegiatan curang dalam bentuk hacking , deface , cracking , dsbg akan diberikan sanksi pemberhentian</li>
+                  <li>Anda dapat menghubungi admin melalui sistem untuk keperluan lebih lanjut</li>
+                </ul>
+              </div>
+              <div class="modal-footer"><a data-dismiss="modal" class="btn btn-inverse" href="#">Mengerti</a> </div>
+            </div>
+
+
+<!--end-Footer-part-->
+<script type="text/javascript">
+  
+  var temp = "x";
+  var Welcome = temp.concat("<?php echo $welcome; ?>");
+  if(Welcome != 'x'){
+       $('#myModalwe').modal('toggle');
+       $('#myModalwe').modal('show');
+  }
+
+</script>
+
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
 <script src="<?php echo base_url();?>/resource/siswa/js/excanvas.min.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/jquery.min.js"></script> 
 <script src="<?php echo base_url();?>/resource/siswa/js/jquery.ui.custom.js"></script> 

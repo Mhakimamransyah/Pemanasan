@@ -43,7 +43,11 @@
 <!--sidebar-menu-->
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
+<<<<<<< HEAD
      <li><img src="<?php echo base_url();?>/resource/siswa/img/user.jpg" style="width: 202px;
+=======
+     <li><img src="<?php echo base_url();?>/resource/siswa/img/fotosiswa/<?php echo $model->getFoto();?>" style="width: 202px;
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
     padding: 8px;
     height: 215px; margin-top: -80px"></li>
      <li id="Beranda"><a href="<?php echo site_url(); ?>/Siswa/index/main"><i class="icon icon-home"></i> <span>Beranda</span></a> </li>

@@ -57,10 +57,14 @@
 <div class="container" style="padding-left: 151px;">
   <div class="row">
     <div class="col-sm-12">
-        <p></p>
+        <p></p>s
     </div>
     <div class="col-sm-4">
+<<<<<<< HEAD
        <a href="http://localhost/Pemanasan/index.php/Admin/login"><img src="images/admin.jpg" alt="Admin" style="width: 194px;
+=======
+       <a href="<?php echo site_url(); ?>/Admin/login"><img src="images/admin.jpg" alt="Admin" style="width: 194px;
+>>>>>>> fbe5ba09c61b9539e01886bbf1e2a22a719e92e6
     height: 153px;">
       <h3>Administrator</h3></a>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>

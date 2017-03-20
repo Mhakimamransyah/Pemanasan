@@ -8,21 +8,21 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="../../bootstrapGuru/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../../resource/Guru/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <!-- Custom CSS -->
-<link href="../..//bootstrapGuru/css/style.css" rel='stylesheet' type='text/css' />
+<link href="../../resource/Guru/css/style.css" rel='stylesheet' type='text/css' />
 <!-- Graph CSS -->
-<link href="../..//bootstrapGuru/css/font-awesome.css" rel="stylesheet"> 
+<link href="../../resource/Guru/css/font-awesome.css" rel="stylesheet"> 
 <!-- jQuery -->
 <!-- lined-icons -->
-<link rel="stylesheet" href="../..//bootstrapGuru/css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="../../resource/Guru/css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 <!-- chart -->
-<script src="../..//bootstrapGuru/js/Chart.js"></script>
+<script src="../../resource/Guru/js/Chart.js"></script>
 <!-- //chart -->
 <!--animate-->
-<link href="../..//bootstrapGuru/css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="../..//bootstrapGuru/js/wow.min.js"></script>
+<link href="../../resource/Guru/css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="../../resource/Guru/js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <!---//webfonts---> 
  <!-- Meters graphs -->
-<script src="../..//bootstrapGuru/js/jquery-1.10.2.min.js"></script>
+<script src="../..//resource/Guru/js/jquery-1.10.2.min.js"></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 </head> 
    
@@ -107,7 +107,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</form>
 							</div>
 							<div class="sub_home_right">
-								<p>Go Back to <a href="index.html">Home</a></p>
+								<p>Go Back to <a href="<?php echo site_url(); ?>/Guru/login">Home</a></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -116,14 +116,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		<!--footer section start-->
 			<footer>
-			   <p>&copy 2015 Easy Admin Panel. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
+			   <p>Sistem Informasi Akademik SMA Negeri 69 palembang</p>
 			</footer>
         <!--footer section end-->
 	</section>
 	
-<script src="../..//bootstrapGuru/js/jquery.nicescroll.js"></script>
-<script src="../..//bootstrapGuru/js/scripts.js"></script>
+<script src="../../resource/Guru/js/jquery.nicescroll.js"></script>
+<script src="../../resource/Guru/js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
-   <script src="../..//bootstrapGuru/js/bootstrap.min.js"></script>
+   <script src="../../resource/Guru/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
         <!--footer section start-->
 			<footer>
-			   <p>Simak Sitem Informasi Akademik</p>
+			   <p>Sistem Informasi Akademik SMA Negeri 69 Palembang</p>
 			</footer>
         <!--footer section end-->

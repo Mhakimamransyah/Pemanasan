@@ -61,8 +61,8 @@
 										</div>
 									</div>
 										<!-- search-scripts -->
-										<script src="<?php echo base_url(); ?>/bootstrapGuru/js/classie.js"></script>
-										<script src="<?php echo base_url(); ?>/bootstrapGuru/js/uisearch.js"></script>
+										<script src="<?php echo base_url(); ?>/resource/Guru/js/classie.js"></script>
+										<script src="<?php echo base_url(); ?>/resource/Guru/js/uisearch.js"></script>
 											<script>
 												new UISearch( document.getElementById( 'sb-search' ) );
 											</script>

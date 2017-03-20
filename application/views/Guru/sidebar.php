@@ -3,10 +3,10 @@
 
 			<!--logo and iconic logo start-->
 			<div class="logo">
-				<h1><a href="<?php echo base_url(); ?>/application/views/Guru/index.html">Easy <span>Admin</span></a></h1>
+				<h1><a href="<?php echo base_url(); ?>/Guru/home">Easy <span>Admin</span></a></h1>
 			</div>
 			<div class="logo-icon text-center">
-				<a href="<?php echo base_url(); ?>/application/views/Guru/index.html"><i class="lnr lnr-home"></i> </a>
+				<a href="<?php echo base_url(); ?>/Guru/home"><i class="lnr lnr-home"></i> </a>
 			</div>
 
 			<!--logo and iconic logo end-->

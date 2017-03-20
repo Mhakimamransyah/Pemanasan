@@ -7,21 +7,21 @@
 <meta name="keywords" content="Sistem Informasi Akademik" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="<?php echo base_url(); ?>/bootstrapGuru/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="<?php echo base_url(); ?>/resource/Guru/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <!-- Custom CSS -->
-<link href="<?php echo base_url(); ?>/bootstrapGuru/css/style.css" rel='stylesheet' type='text/css' />
+<link href="<?php echo base_url(); ?>/resource/Guru/css/style.css" rel='stylesheet' type='text/css' />
 <!-- Graph CSS -->
-<link href="<?php echo base_url(); ?>/bootstrapGuru/css/font-awesome.css" rel="stylesheet"> 
+<link href="<?php echo base_url(); ?>/resource/Guru/css/font-awesome.css" rel="stylesheet"> 
 <!-- jQuery -->
 <!-- lined-icons -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>/bootstrapGuru/css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="<?php echo base_url(); ?>/resource/Guru/css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 <!-- chart -->
-<script src="<?php echo base_url(); ?>/bootstrapGuru/js/Chart.js"></script>
+<script src="<?php echo base_url(); ?>/resource/Guru/js/Chart.js"></script>
 <!-- //chart -->
 <!--animate-->
-<link href="<?php echo base_url(); ?>/bootstrapGuru/css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="<?php echo base_url(); ?>/bootstrapGuru/js/wow.min.js"></script>
+<link href="<?php echo base_url(); ?>/resource/Guru/css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="<?php echo base_url(); ?>/resource/Guru/js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
@@ -30,7 +30,7 @@
 <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <!---//webfonts---> 
  <!-- Meters graphs -->
-<script src="<?php echo base_url(); ?>/bootstrapGuru/js/jquery-1.10.2.min.js"></script>
+<script src="<?php echo base_url(); ?>/resource/Guru/js/jquery-1.10.2.min.js"></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 
 </head> 
@@ -64,9 +64,9 @@
 <>
     </section>
   
-<script src="<?php echo base_url(); ?>/bootstrapGuru/js/jquery.nicescroll.js"></script>
-<script src="<?php echo base_url(); ?>/bootstrapGuru/js/scripts.js"></script>
+<script src="<?php echo base_url(); ?>/resource/Guru/js/jquery.nicescroll.js"></script>
+<script src="<?php echo base_url(); ?>/resource/Guru/js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
-   <script src="<?php echo base_url(); ?>/bootstrapGuru/js/bootstrap.min.js"></script>
+   <script src="<?php echo base_url(); ?>/resource/Guru/js/bootstrap.min.js"></script>
 </body>
-</html>
+</html>\

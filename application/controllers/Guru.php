@@ -15,7 +15,7 @@
 
 	}
 
-	function loginProcess() {
+	function home() {
 		$this->load->helper('url');
 		$this->load->view('Guru/index');
 	}

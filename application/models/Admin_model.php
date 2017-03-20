@@ -83,5 +83,25 @@
 		$res = $this->db->update('admin', $data, "username = '" .$this->session->tempdata('username'). "'");
 		return $res;
 	}
+	
+	public function retrieveAll($tabel, $limit='', $offset='') {
+		$res = $this->db->get($tabel, $limit, $offset);
+		return $res->result_array();
+	}
+	
+	public function retrieve($tabel, $cond, $limit='', $offset='') {
+		$res = $this->db->get_where($tabel, $cond, $limit, $offset);
+		return $res->result_array();
+	}
+	
+	public function add($tabel, $data) {
+		$res = $this->db->insert($tabel, $data);
+		return $res;
+	}
+	
+	public function drop($tabel, $cond) {
+		$res = $this->db->delete($tabel, $cond);
+		return $res;
+	}
   }
 ?>

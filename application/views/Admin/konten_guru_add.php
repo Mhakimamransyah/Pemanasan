@@ -25,27 +25,27 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal">
+            <form id='form' class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
                   <label for="nip" class="col-sm-2 control-label">NIP</label>
 
                   <div class="col-sm-10">
-                    <input required type="text" class="form-control" id="nip" placeholder="NIP">
+                    <input required type="text" class="form-control" name="NIP" placeholder="NIP">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="nama" class="col-sm-2 control-label">Nama</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nama" placeholder="Nama">
+                    <input type="text" class="form-control" name="Nama" placeholder="Nama">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="alamat" class="col-sm-2 control-label">Alamat</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="alamat" placeholder="Alamat">
+                    <input type="text" class="form-control" name="Alamat" placeholder="Alamat">
                   </div>
                 </div>                			
               </div>
@@ -68,3 +68,30 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  
+  <script>
+$('#form').on('submit',function(e){
+e.preventDefault();
+   $.ajax({
+       type : "post",
+       url  : "<?php echo site_url();?>/Admin/tambah/guru",
+       data  : new FormData(this),
+	   processData : false,
+	   contentType : false,
+       beforeSubmit : function(data){
+           
+       },
+       success : function(data){
+		   if(data==1) {
+			   alert("Guru berhasil ditambahkan");
+			   location.reload();
+		   } else {
+				alert(data);
+		   }
+	   },
+        error : function(data){
+			alert("Guru gagal ditambahkan, NIP telah digunakan");
+        }
+   })
+})
+  </script>

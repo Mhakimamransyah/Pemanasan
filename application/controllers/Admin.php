@@ -5,6 +5,7 @@
 	public function __construct(){
         parent::__construct();
         $this->load->helper("url");
+		$this->load->helper("file");
         $this->load->database();
         $this->load->library("session");
         $this->load->model("Admin_model");
@@ -15,7 +16,7 @@
 		$this->page('index');
 	}	
 	
-	function page($action, $action2='') {
+	function page($action, $action2='', $action3='') {
         if($this->session->tempdata('username') != null){
             $this->model->fillAllData($this->session->tempdata("username"));
 			
@@ -27,28 +28,36 @@
 				$sidebar['menu'] = 'siswa';
 				if($action2 == 'semua') {
 					$sidebar['submenu'] = 'semua';
-					$komponen = $this->loadKomponen($this->load->view('Admin/konten_siswa_all', ["model" => $this->model], true), $sidebar);
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_siswa_all', ['siswas' => $this->model->retrieveAll('siswa')], true), $sidebar);
 				} elseif($action2 == 'tambah') {
 					$sidebar['submenu'] = 'tambah';
-					$komponen = $this->loadKomponen($this->load->view('Admin/konten_siswa_add', ["model" => $this->model], true), $sidebar);
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_siswa_add', [], true), $sidebar);
 				}
 			} elseif($action == 'guru') {
 				$sidebar['menu'] = 'guru';
 				if($action2 == 'semua') {
 					$sidebar['submenu'] = 'semua';
-					$komponen = $this->loadKomponen($this->load->view('Admin/konten_guru_all', ["model" => $this->model], true), $sidebar);
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_guru_all', ['gurus' => $this->model->retrieveAll('guru')], true), $sidebar);
 				} elseif($action2 == 'tambah') {
 					$sidebar['submenu'] = 'tambah';
-					$komponen = $this->loadKomponen($this->load->view('Admin/konten_guru_add', ["model" => $this->model], true), $sidebar);
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_guru_add', [], true), $sidebar);
 				}
 			} elseif($action == 'wali') {
 				$sidebar['menu'] = 'wali';
 				if($action2 == 'semua') {
 					$sidebar['submenu'] = 'semua';
-					$komponen = $this->loadKomponen($this->load->view('Admin/konten_wali_all', ["model" => $this->model], true), $sidebar);
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_wali_all', ['walis' => $this->model->retrieveAll('wali_murid')], true), $sidebar);
 				} elseif($action2 == 'tambah') {
 					$sidebar['submenu'] = 'tambah';
-					$komponen = $this->loadKomponen($this->load->view('Admin/konten_wali_add', ["model" => $this->model], true), $sidebar);
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_wali_add', [], true), $sidebar);
+				}
+			} elseif($action == 'detail') {
+				if($action2 == 'siswa') {
+					
+				} elseif($action2 == 'guru') {
+					
+				} elseif($action2 == 'wali') {
+					
 				}
 			}
 			$this->load->view("Admin/index", $komponen);
@@ -113,8 +122,72 @@
 	function updateProfile() {	
 		$result = $this->model->updateProfile($_POST);
 		echo $result;
-		$this->session->set_tempdata("username", $_POST['username']);
+		$this->session->set_tempdata("username", $_POST['username'],60*10);
+	}
+	
+	function updateAvatar() {		
+		$this->load->library("upload",$this->configUpload('admin'));	
+		if($this->upload->do_upload('ava')) {
+			$this->model->fillAllData($this->session->tempdata("username"));
+			$prev_ava = "resource/admin/dist/img/" .$this->model->getAva();
+			$data['ava'] = $this->upload->data('file_name');
+			$result = $this->model->updateProfile($data);
+			echo $result;
+			$this->session->set_tempdata("username", $this->model->getUsername(),60*10);
+			unlink($prev_ava);
+		} else {
+			$error = $this->upload->display_errors(' ',' ');
+			echo $error;
+		}
+	}	
+	
+	function delete($action, $action2) {
+		if($action == 'siswa') {
+			
+		} elseif($action == 'guru') {
+			
+		} elseif($action == 'admin') {
+			
+		}
+	}
+	
+	function configUpload($in) {
+		$config = array(			
+			'allowed_types' => 'jpg|png|bmp|gif|jpeg',
+			'max_size' => '20000'			
+		);
+		if($in == 'admin') {
+			$config['upload_path'] = './resource/admin/dist/img';
+		} elseif($in == 'siswa') {
+			$config['upload_path'] = './resource/siswa/img/fotosiswa';
+		} elseif($in == 'guru') {
+			$config['upload_path'] = './resource/guru/dist/img';
+		} elseif($in == 'wali') {
+			$config['upload_path'] = './resource/wali/dist/img';
+		} 
+		
+		return $config;
+	}
+	
+	function tambah($action) {
+		if($action == 'siswa') {
+			$this->load->library("upload",$this->configUpload('siswa'));
+			if($this->upload->do_upload('Foto')) {
+				$data = $_POST;
+				$data['Foto'] = $this->upload->data('file_name');
+				$result = $this->model->add('siswa', $data);
+				echo $result;
+			} else {
+				$error = $this->upload->display_errors(' ',' ');
+				echo $error;
+			}
+		} elseif($action == 'wali') {
+			$result = $this->model->add('wali_murid', $_POST);
+			echo $result;					
+		} elseif($action == 'guru') {
+			$result = $this->model->add('guru', $_POST);
+			echo $result;					
+		}
 	}
   }
-
 ?>

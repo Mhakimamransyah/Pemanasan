@@ -25,36 +25,50 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal">
+            <form class="form-horizontal" id='form'>
               <div class="box-body">
                 <div class="form-group">
                   <label for="id" class="col-sm-2 control-label">ID</label>
 
                   <div class="col-sm-10">
-                    <input required type="text" class="form-control" id="id" placeholder="ID">
+                    <input required type="text" class="form-control" name="id_wali_murid" placeholder="ID">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="nama" class="col-sm-2 control-label">Nama</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nama" placeholder="Nama">
+                    <input type="text" class="form-control" name="nama_wali" placeholder="Nama">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="telepon" class="col-sm-2 control-label">Telepon</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="telepon" placeholder="Telepon">
+                    <input type="text" class="form-control" name="telepon" placeholder="Telepon">
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="ttl" class="col-sm-2 control-label">TTL</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="TTL" placeholder="TTL">
+                  </div>
+                </div>				
                 <div class="form-group">
                   <label for="alamat" class="col-sm-2 control-label">Alamat</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="alamat" placeholder="Alamat">
+                    <input type="text" class="form-control" name="alamat" placeholder="Alamat">
                   </div>
-                </div>                			
+                </div>
+                <div class="form-group">
+                  <label for="password" class="col-sm-2 control-label">Password</label>
+
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                  </div>
+                </div>				
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
@@ -75,3 +89,30 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  
+  <script>
+$('#form').on('submit',function(e){
+e.preventDefault();
+   $.ajax({
+       type : "post",
+       url  : "<?php echo site_url();?>/Admin/tambah/wali",
+       data  : new FormData(this),
+	   processData : false,
+	   contentType : false,
+       beforeSubmit : function(data){
+           
+       },
+       success : function(data){
+		   if(data==1) {
+			   alert("Wali Murid berhasil ditambahkan");
+			   location.reload();
+		   } else {
+				alert(data);
+		   }
+	   },
+        error : function(data){
+			alert("Wali Murid gagal ditambahkan, ID telah digunakan");
+        }
+   })
+})
+  </script>

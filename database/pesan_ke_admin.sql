@@ -23,47 +23,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `pesan_ke_admin`
 --
 
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(25) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `password` varchar(40) NOT NULL,
+CREATE TABLE `pesan_ke_admin` (
   `nama` text NOT NULL,
-  `ava` text NOT NULL
+  `pesan` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `waktu` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `email`, `password`, `nama`, `ava`) VALUES
-(1, 'sdt', 'sdt@sma69plg.sch.id', 'sdt', 'Satu Dua Tiga', 'avatar2.png'),
-(2, 'sa', 'sa@sma69plg.sch.id', 'sasa', 'Saya Admin', 'avatar5368332_13.gif');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `pesan_ke_admin`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`);
+ALTER TABLE `pesan_ke_admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `pesan_ke_admin`
 --
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `pesan_ke_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

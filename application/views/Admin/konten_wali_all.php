@@ -20,7 +20,7 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-		
+		<div class='col-md-12'>
 		  <div class="box">
             <div class="box-header">
               <h3 class="box-title">Wali Siswa SMAN 69 Palembang</h3>
@@ -38,17 +38,22 @@
 					</tr>
                 </thead>
                 <tbody>
-					<tr id=''>
-					  <td>1</td>
-					  <td>123141</td>
-					  <td>dono</td>
-					  <td>ipa</td>
+				 <?php 
+				 $i=1;
+				 foreach($walis as $wali) {
+				 ?>
+					<tr id='<?php echo $wali['id_wali_murid']; ?>'>
+					  <td><?php echo $i++; ?></td>
+					  <td><?php echo $wali['id_wali_murid']; ?></td>
+					  <td><?php echo $wali['nama_wali']; ?></td>
+					  <td><?php echo $wali['telepon']; ?></td>
 					  <td align='center'>
-						<a href='#' title='Edit'><span class='fa fa-search'></span></a>     
+						<a href='<?php echo site_url();?>/Admin/page/detail/wali/<?php echo $wali['id_wali_murid']; ?>' title='Edit'><span class='fa fa-search'></span></a>     
 						|
-						<a href='#' title='Hapus'><span class='fa fa-remove'></span></a>
+						<a href='<?php echo site_url();?>/Admin/delete/wali/<?php echo $wali['id_wali_murid']; ?>' title='Hapus'><span class='fa fa-remove'></span></a>
 					  </td>				  
 					</tr>
+				 <?php } ?>
                 </tbody>
                 <tfoot>
 					<tr>
@@ -64,7 +69,7 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-		
+		</div>
       </div>
       <!-- /.row (main row) -->
 

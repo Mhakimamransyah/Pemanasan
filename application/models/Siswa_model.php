@@ -16,11 +16,11 @@
 
 
     public function __construct(){
-    	parent::__construct();
+      parent::__construct();
     }
 
     public function setNama($newNama){
-    	$this->nama = $newNama;
+      $this->nama = $newNama;
     }
 
     public function getNama(){
@@ -44,7 +44,7 @@
     }
 
     public function setNisn($newNisn){
-    	$this->nisn= $newNisn;
+      $this->nisn= $newNisn;
     }
 
     public function getNisn(){
@@ -52,7 +52,7 @@
     }
 
     public function setAlamat($newAlamat){
-    	$this->alamat= $newAlamat;
+      $this->alamat= $newAlamat;
     }
 
     public function getAlamat(){
@@ -60,7 +60,7 @@
     }
 
     public function setJurusan($newJurusan){
-    	$this->jurusan= $newJurusan;
+      $this->jurusan= $newJurusan;
     }
 
     public function getJurusan(){
@@ -68,19 +68,19 @@
     }
 
     public function setIDwaliKelas($newIDWk){
-    	$this->id_wali_kelas= $newIDWk;
+      $this->id_wali_kelas= $newIDWk;
     }
 
     public function setIDwaliMurid($newIDWm){
-    	$this->id_wali_murid= $newIDWm;
+      $this->id_wali_murid= $newIDWm;
     }
 
     public function setPassword($newPassword){
-    	$this->pass = $newPassword;
+      $this->pass = $newPassword;
     }
 
     public function setAsalSmp($newAsalSmp){
-    	$this->asalSMP = $newAsalSmp;
+      $this->asalSMP = $newAsalSmp;
     }
 
     public function getAsalSmp(){

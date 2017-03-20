@@ -60,6 +60,7 @@
         <p></p>s
     </div>
     <div class="col-sm-4">
+
        <a href="<?php echo site_url(); ?>/Admin/login"><img src="images/admin.jpg" alt="Admin" style="width: 194px;
     height: 153px;">
       <h3>Administrator</h3></a>

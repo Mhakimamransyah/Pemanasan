@@ -11,7 +11,7 @@
 <body style="background:url(<?php echo base_url(); ?>/resource/siswa/img/registBackground.jpg);">
  
  <div align="center" style="padding: 87px;">
-   	  <div class="container" style="    background-color:white; border: 2px solid white; border-radius: 19px;">
+      <div class="container" style="    background-color:white; border: 2px solid white; border-radius: 19px;">
   
   <form id="siswaRegisterForm"  action="<?php echo site_url();?>/Siswa/registerProcess" enctype="multipart/form-data" method="post" class="form-horizontal">
      <div class="form-group">        
@@ -107,7 +107,7 @@
      <br><br><br><br>
   </form>
    <div class="col-sm-offset-2 col-sm-9" >
-       	 <p>By clicking the register button, you agree for the term and privacy policy provided by us</p>
+         <p>By clicking the register button, you agree for the term and privacy policy provided by us</p>
      </div>
     </div>
 </div>

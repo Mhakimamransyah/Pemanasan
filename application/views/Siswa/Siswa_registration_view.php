@@ -121,9 +121,7 @@
       var oFReader = new FileReader();
       oFReader.readAsDataURL(document.getElementById("inputGambar1").files[0]);
       oFReader.onload = function (oFREvent){
-         if($('#gambar1').attr('src') == ""){
              document.getElementById("gambar1").src = oFREvent.target.result;
-        }
         }
    });
 

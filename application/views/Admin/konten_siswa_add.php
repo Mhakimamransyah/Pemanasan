@@ -102,14 +102,14 @@
                   <label for="wali-kelas" class="col-sm-2 control-label">Wali Kelas</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="ID_Wali_Kelas" id="ID_Wali_Kelas" placeholder="Wali Kelas">
+                    <input type="text" class="form-control" name="ID_wali_kelas" id="ID_wali_kelas" placeholder="Wali Kelas">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="wali-murid" class="col-sm-2 control-label">Wali Murid</label>
 
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="ID_Wali_Murid" id="ID_Wali_Murid" placeholder="Wali Murid">
+                    <input type="text" class="form-control" name="ID_wali_murid" id="ID_wali_murid" placeholder="Wali Murid">
                   </div>
                 </div>				
               </div>

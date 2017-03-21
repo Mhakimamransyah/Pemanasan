@@ -129,7 +129,7 @@ $('#profile').on('submit',function(e){
 e.preventDefault();
    $.ajax({
        type : "post",
-       url  : "<?php echo site_url();?>/Admin/updateProfile",
+       url  : "<?php echo site_url();?>/Admin/updateProfile/admin",
        data  : $('#profile').serialize(),
        beforeSubmit : function(data){
            
@@ -151,7 +151,7 @@ $('#ava_pict').on('submit',function(e){
 e.preventDefault();
    $.ajax({
        type : "post",
-       url  : "<?php echo site_url();?>/Admin/updateAvatar",
+       url  : "<?php echo site_url();?>/Admin/updateAvatar/admin",
        data  : new FormData(this),
 	   processData : false,
 	   contentType : false,

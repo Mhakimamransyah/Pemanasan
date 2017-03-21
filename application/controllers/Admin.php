@@ -53,11 +53,14 @@
 				}
 			} elseif($action == 'detail') {
 				if($action2 == 'siswa') {
-					
+					$result = $this->model->retrieve('siswa', array('NISN' => $action3));
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_siswa_edit', ['data' => $result], true));
 				} elseif($action2 == 'guru') {
-					
+					$result = $this->model->retrieve('guru', array('NIP' => $action3));
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_guru_edit', ['data' => $result], true));				
 				} elseif($action2 == 'wali') {
-					
+					$result = $this->model->retrieve('wali_murid', array('id_wali_murid' => $action3));
+					$komponen = $this->loadKomponen($this->load->view('Admin/konten_wali_edit', ['data' => $result], true));				
 				}
 			}
 			$this->load->view("Admin/index", $komponen);
@@ -119,25 +122,55 @@
 		return $komponen;
 	}
 	
-	function updateProfile() {	
-		$result = $this->model->updateProfile($_POST);
-		echo $result;
-		$this->session->set_tempdata("username", $_POST['username'],60*10);
+	function updateProfile($action) {	
+		if($action == 'admin') {
+			$result = $this->model->update('admin', $_POST, "username = '" .$this->session->tempdata('username'). "'");
+			echo $result;
+			$this->session->set_tempdata("username", $_POST['username'],60*10);
+		} elseif($action == 'siswa') {
+			$result = $this->model->update('siswa', $_POST, "NISN = '" .$_POST['NISN']. "'");
+			echo $result;
+		} elseif($action == 'guru') {
+			$result = $this->model->update('guru', $_POST, "NIP = '" .$_POST['NIP']. "'");
+			echo $result;
+		} elseif($action == 'wali') {
+			$result = $this->model->update('wali_murid', $_POST, "id_wali_murid = '" .$_POST['id_wali_murid']. "'");
+			echo $result;
+		}
 	}
 	
-	function updateAvatar() {		
-		$this->load->library("upload",$this->configUpload('admin'));	
-		if($this->upload->do_upload('ava')) {
-			$this->model->fillAllData($this->session->tempdata("username"));
-			$prev_ava = "resource/admin/dist/img/" .$this->model->getAva();
-			$data['ava'] = $this->upload->data('file_name');
-			$result = $this->model->updateProfile($data);
-			echo $result;
-			$this->session->set_tempdata("username", $this->model->getUsername(),60*10);
-			unlink($prev_ava);
-		} else {
-			$error = $this->upload->display_errors(' ',' ');
-			echo $error;
+	function updateAvatar($action) {	
+		if($action == 'admin') {
+			$this->load->library("upload",$this->configUpload('admin'));	
+			if($this->upload->do_upload('ava')) {
+				$this->model->fillAllData($this->session->tempdata("username"));
+				$prev_ava = "resource/admin/dist/img/" .$this->model->getAva();
+				$data['ava'] = $this->upload->data('file_name');
+				$result = $this->model->update('admin',$data,"username = '" .$this->session->tempdata('username'). "'");
+				echo $result;
+				$this->session->set_tempdata("username", $this->model->getUsername(),60*10);
+				unlink($prev_ava);
+			} else {
+				$error = $this->upload->display_errors(' ',' ');
+				echo $error;
+			}
+		} elseif($action == 'siswa') {
+			$this->load->library("upload",$this->configUpload('siswa'));	
+			if($this->upload->do_upload('Foto')) {
+				$result = $this->model->retrieve('siswa', array('NISN' => $_POST['NISN']));
+				$prev_ava = "resource/siswa/img/fotosiswa/" .$result[0]['Foto'];
+				$data['Foto'] = $this->upload->data('file_name');
+				$result = $this->model->update('siswa', $data, "NISN = '" .$_POST['NISN']. "'");
+				echo $result;
+				unlink($prev_ava);
+			} else {
+				$error = $this->upload->display_errors(' ',' ');
+				echo $error;
+			}			
+		} elseif($action == 'guru') {
+			
+		} elseif($action == 'wali') {
+		
 		}
 	}	
 	
@@ -161,7 +194,7 @@
 		} elseif($in == 'siswa') {
 			$config['upload_path'] = './resource/siswa/img/fotosiswa';
 		} elseif($in == 'guru') {
-			$config['upload_path'] = './resource/guru/dist/img';
+			$config['upload_path'] = './resource/Guru/dist/img';
 		} elseif($in == 'wali') {
 			$config['upload_path'] = './resource/wali/dist/img';
 		} 

@@ -79,8 +79,8 @@
        return  $this->db->query($query);      
     }
 	
-	public function updateProfile($data) {
-		$res = $this->db->update('admin', $data, "username = '" .$this->session->tempdata('username'). "'");
+	public function update($tabel, $data, $cond) {
+		$res = $this->db->update($tabel, $data, $cond);
 		return $res;
 	}
 	
